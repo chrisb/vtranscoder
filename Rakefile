@@ -5,12 +5,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "vtranscoder"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Provides a simple, zero-configuration front end to encoding videos with FFMPEG.}
+    gem.description = %Q{VTranscoder is a collection of utility methods for transcoding and 'publishing' videos, with the intent to make transcoding video to web formats like FLV easier. VTanscoder also provides convience methods for taking screenshots, uploading to S3/CloudFront etc.}
     gem.email = "chris@shadowreactor.com"
     gem.homepage = "http://github.com/chrisb/vtranscoder"
     gem.authors = ["Chris Bielinski"]
-    gem.add_development_dependency "thoughtbot-shoulda"
+    # gem.add_development_dependency "thoughtbot-shoulda"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
