@@ -2,7 +2,7 @@
 
 VTranscoder is a collection of utility methods for transcoding and 'publishing' videos with FFMPEG. The goal of this project is to make transcoding video to web formats like FLV and commonly associated tasks easier. 
 
-VTanscoder also provides connivence methods for taking screenshots, uploading to S3/CloudFront etc.
+VTanscoder also provides convenience methods for taking screenshots, uploading to S3/CloudFront etc. (future release)
 
 ## Dependencies
 
