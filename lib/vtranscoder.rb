@@ -40,16 +40,14 @@ class VTranscoder
   def take_screenshot(options)
     verify_ffmpeg_exists
     verify_source_exists
-    options = { :size => '320*240' }.merge(options)
-    
+        
     ffmpeg_options = {
       :i => @source,
-      :y => '',
+      :s => '320x240',
+      :vframes => 1,
       :ss => options[:at],
-      :sameq => '',
-      :t => '0.001',
-      :s => options[:size]
-    }
+      :an => '',
+    }.merge(options.has_key?(:options) ? options[:options] : {})
     
     output = run_ffmpeg( ffmpeg_options, options[:to], true )
     raise "unable to take screenshot:\n\n#{output}" unless File.exists?(options[:to])
@@ -77,7 +75,7 @@ class VTranscoder
     ffmpeg_output.scan(/Stream #0.([0-9]): (.*): (.*), (.*)/).each do |match|
       @meta[:streams][match[0].to_i] = { :type => match[1], :codec => match[2], :details => match[3] }
     end
-  end
+    end
   
   def convert_with_options(destination,options)
     verify_ffmpeg_exists
